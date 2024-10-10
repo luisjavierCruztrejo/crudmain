@@ -1,13 +1,14 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# Configuración de la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@68.183.103.70:3308/ejercicio'
+# Configuración de la base de datos para conectarse al VPS
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@68.183.103.70:3308/ejercicio'  # Cambiar por las credenciales y la IP del VPS
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://luis:aslgrAObLF81et9BTIgIPNLXh7UAAT4r@dpg-crfn0g23esus73f3frpg-a.oregon-postgres.render.com:5432/javier_r5d0'
 #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# Inicialización de la base de datos
 db = SQLAlchemy(app)
 
 # Modelo de la base de datos
